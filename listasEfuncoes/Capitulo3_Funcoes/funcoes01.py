@@ -29,3 +29,17 @@ def depreciarPorNome(lista, porc):
             print("Valor antigo: ", elemento[1])
             elemento[1] = elemento[1] * (1-porc/100)
             print("Novo valor: ", elemento[1])
+
+def excluirPorSerial(lista):
+    serial=int(input("\nDigite o serial do equipamento que será excluido: "))
+    for elemento in lista:
+        if elemento[2]==serial:lista.remove(elemento)
+    return "Itens excluídos."
+
+def resumirValores(lista):
+    valores=[]
+    for elemento in lista:valores.append(elemento[1])
+    if len(valores)>0:
+        print("O equipamento mais caro custa: ", max(valores))
+        print("O equipamento mais barato custa: ", min(valores))
+        print("O total de equipamentos é de: ", sum(valores))
