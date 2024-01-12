@@ -1,16 +1,16 @@
-from Funcoes.tuplas02 import *
-
 usuarios={}
-opcao=perguntar()
-while opcao == "I" or opcao == "P" or opcao == "E":
-    if opcao=="I":
-        inserir(usuarios)
-    elif opcao=="P":
-        pesquisar(usuarios,input("Qual login deseja pesquisar? "))
-    elif opcao == "E":
-        excluir(usuarios,input("Qual login deseja excluir? "))
-    elif opcao == "L":
-        listar(usuarios)
-    else:
-        print("Saindo do programa")
-    opcao = perguntar()
+resp="S"
+emails=[]
+while resp=="S":
+    emails.append(input("Digite um e-mail: ").lower())
+    resp=input("Digite <S> para continuar: ").upper()
+tupla = list(enumerate(emails))
+for chave in range(0,len(tupla)):
+    print("Email: ", tupla[chave][1])
+    usuarios[tupla[chave]]=[input("Digite o nome"), input("Digite o nível")]
+
+for chave,dado in usuarios.items():
+    print("Usuario.:", chave[0])
+    print("Email...: ",chave[1])
+    print("Nome....: ", dado[0])
+    print("Nível...: ", dado[1])
