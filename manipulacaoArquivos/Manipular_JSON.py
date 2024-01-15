@@ -1,5 +1,6 @@
 import json
-inventario={}
+with open("inventario_json.json", "r") as arq_json:
+    inventario = json.load(arq_json)
 opcao=int(input("Digite: ""\n<1> para registrar ativo""\n<2> para exibir ativos armazenados: "))
 while opcao>0 and opcao<3:
     if opcao==1:
@@ -16,7 +17,7 @@ while opcao>0 and opcao<3:
     elif opcao==2:
         with open("inventario_json.json", "r") as arq_json:
             resultado = json.load(arq_json)
-            for chave, dado in resultado.items():
+            for chave, dado in inventario.items():
                 print("Data.........: ", dado[0])
                 print("Descrição....: ", dado[1])
                 print("Departamento.: ", dado[2])
