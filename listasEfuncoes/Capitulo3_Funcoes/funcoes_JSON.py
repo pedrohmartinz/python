@@ -3,6 +3,7 @@ import os
 def chamarMenu():
     escolha = int(input("Digite: ""\n<1> para registrar ativo""\n<2> para exibir ativos armazenados: "))
     return escolha
+
 def ler_arquivo(arquivo):
     if os.path.exists(arquivo):
         with open(arquivo, "r") as arq_json:
