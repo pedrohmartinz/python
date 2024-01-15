@@ -1,4 +1,4 @@
-from Funcoes.tuplas02 import *
+from tuplasEdicionarios.Funcoes.dicionarios02 import *
 
 usuarios={}
 opcao=perguntar()
